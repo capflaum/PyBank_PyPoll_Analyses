@@ -31,3 +31,7 @@ Analysis_file = os.path.join("..","analysis", "Analysis.txt")
 with open(Analysis_file, "w") as datafile:
     writer = csv.writer(datafile)
     writer.writerow([Total_Months, total_profit, Average])
+
+#Total Months: 86
+#Total: $ 38382578
+#Average Change: $ 446309
