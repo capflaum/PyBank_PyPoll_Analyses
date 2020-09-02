@@ -16,16 +16,16 @@ with open (Budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
 
-    for row in csvreader:   
+   for row in csvreader:   
         total_profit = total_profit + int(row[1])
         Total_Months = Total_Months+1
         
-    print(f"Total Months: {Total_Months}")
-    print(f"Total: $ {total_profit}")
+   print(f"Total Months: {Total_Months}")
+   print(f"Total: $ {total_profit}")
 
     
-    Average = round(total_profit / Total_Months)
-    print(f"Average Change: $ {Average}")
+Average = round(total_profit / Total_Months)
+print(f"Average Change: $ {Average}")
 
 Analysis_file = os.path.join("..","analysis", "Analysis.txt")
 with open(Analysis_file, "w") as datafile:
