@@ -1,7 +1,7 @@
 import os
 import csv
 
-    # Having trouble running from the right directory
+# Having trouble running from the right directory
 print ("-----")
 print (os.getcwd())
 os.chdir("C:\\Users\\capfl\\Python-Challenge\\PyBank")
