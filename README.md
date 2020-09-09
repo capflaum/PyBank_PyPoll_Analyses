@@ -1,52 +1,55 @@
 import os
 import csv
 
-#Having trouble running from the right directory
 print ("-----")
 print (os.getcwd())
-os.chdir("C:\\Users\\capfl\\Python-Challenge\\PyBank")
+os.chdir("C:\\Users\\capfl\\Python-Challenge\\PyPoll")
 print (os.getcwd())
 print ("-----")
 
-month_count = 0
-total_profit=0
-last_profit=0
-current_profit = 0 
-max_profit_change =0
+vote_count = 0
 
-Budget_csv = os.path.join("..","Resources", "budget_data.csv")
-with open (Budget_csv) as csvfile:
+def remove_duplicates(candidatelist):
+    uniquelist = []
+    for candidate in candidatelist:
+        if candidate not in uniquelist:
+            uniquelist.append(candidate)
+    return uniquelist
+
+#vote_percentages = (votes / vote_count) *100
+
+full_list= []
+
+election_csv = os.path.join("..", "Resources", "election_data.csv")
+with open (election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    next(csvreader)
+    header = next(csvreader)
 
-    for row in csvreader: 
-        total_profit = total_profit + int(row[1])
-        month_count = month_count+1
+    for row in csvreader:
+        vote_count = vote_count+1
+        full_list.append(row[2])
+                  
+candidate_list = remove_duplicates(full_list)
 
-        current_profit = int(row[1])
-        change_in_profit = current_profit - last_profit
-        if month_count == 2:
-            max_profit_change = change_in_profit
-        elif month_count > 2:
-            if change_in_profit >= max_profit_change:
-                max_profit_change = change_in_profit
-                month_of_max_profit_change = row[0]
-            elif change_in_profit <= max_profit_change:
-                greatest_decrease = change_in_profit
-                month_of_greatest_decrease = row[0]
-        
-     
-        
-    print(f"Total Months: {month_count}")
+#not needed after creating dictionary
+#for name in candidate_list:
+    # print (name)
 
-    print(f"Total: $ {total_profit}")
-    print (f"Max Profit Change: {month_of_max_profit_change} ${max_profit_change}")
-    print(f"Greatest Decrease in Profits: {month_of_greatest_decrease} ${greatest_decrease}")
-    Average = round(total_profit / month_count)
-    print(f"Average Change: ${Average}")
+votes = dict()
+for name in full_list:
+    if (name in votes.keys()):
+        votes[name] = votes[name]+1
+    else:
+        votes[name] = 1
+for key in votes:
+    print (f"{key}: {votes[key]} votes, {round((votes[key]/vote_count)*100)}%")
+    
+print(f"Total Votes: {vote_count}")
 
-        
-Analysis_file = os.path.join("..","analysis", "Analysis.txt")
-with open(Analysis_file, "w") as datafile:
+print(f"Winner: ")
+
+
+pypoll_analysis = os.path.join("..","analysis", "Analysis.txt")
+with open(pypoll_analysis, "w") as datafile:
     writer = csv.writer(datafile)
-    writer.writerow([month_count, total_profit, Average])
+    writer.writerow
