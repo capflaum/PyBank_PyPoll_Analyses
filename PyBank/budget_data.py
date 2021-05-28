@@ -44,4 +44,5 @@ with open (budget_csv) as budgetData:
 analysis_file = os.path.join("..", "analysis", "Analysis.txt")
 with open(analysis_file, "w") as txt_file:
     txt_file.write(text)
+
     #writer.writerow([month_count, total_profit, month_of_max_profit_change, max_profit_change, month_of_greatest_decrease, greatest_decrease, Average])
