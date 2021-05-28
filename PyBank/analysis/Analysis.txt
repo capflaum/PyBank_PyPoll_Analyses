@@ -1,0 +1,5 @@
+Total Months: 86
+Total: $ 38382578
+Max Profit Change: Feb-2012 $1170593
+Greatest Decrease in Profits: Feb-2017 $671099
+Average Change: $446309
