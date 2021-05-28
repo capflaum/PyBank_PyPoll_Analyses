@@ -1,12 +1,6 @@
 import os
 import csv
 
-print ("-----")
-print (os.getcwd())
-os.chdir("C:\\Users\\capfl\\Python-Challenge\\PyPoll")
-print (os.getcwd())
-print ("-----")
-
 vote_count = 0
 
 def remove_duplicates(candidatelist):
@@ -20,7 +14,7 @@ def remove_duplicates(candidatelist):
 
 full_list= []
 
-election_csv = os.path.join("..", "Resources", "election_data.csv")
+election_csv = os.path.join("..", "resources", "election_data.csv")
 with open (election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
