@@ -1,7 +1,5 @@
 ## PyBank
 
-![Revenue](Images/revenue-per-lead.png)
-
 Tasked with creating a Python script for analyzing the financial records of a company with a simple set of financial data called [budget_data.csv](PyBank/resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`.
 
 * The Python script will analyze the records to calculate each of the following:
@@ -20,11 +18,9 @@ Tasked with creating a Python script for analyzing the financial records of a co
 
 ## PyPoll
 
-![Vote Counting](Images/Vote_counting.png)
+Tasked with helping a small, rural town modernize its vote counting process.
 
-* In this challenge, you are tasked with helping a small, rural town modernize its vote counting process.
-
-* You will be give a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. Your task is to create a Python script that analyzes the votes and calculates each of the following:
+* Using a set of poll data called [election_data.csv](PyPoll/resources/election_data.csv), the task is to create a Python script that analyzes the votes and calculates each of the following:
 
   * The total number of votes cast
 
@@ -36,20 +32,4 @@ Tasked with creating a Python script for analyzing the financial records of a co
 
   * The winner of the election based on popular vote.
 
-* As an example, your analysis should look similar to the one below:
-
-  ```text
-  Election Results
-  -------------------------
-  Total Votes: 3521001
-  -------------------------
-  Khan: 63.000% (2218231)
-  Correy: 20.000% (704200)
-  Li: 14.000% (492940)
-  O'Tooley: 3.000% (105630)
-  -------------------------
-  Winner: Khan
-  -------------------------
-  ```
-
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+* In addition, final script will print the analysis to the terminal and export a text file with the results.
